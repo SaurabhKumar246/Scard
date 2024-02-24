@@ -1,0 +1,163 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1581022295087-35e593704911?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.book {
+  position: relative;
+  border-radius: 20px;
+  width: 400px; /* Increase the width */
+  height: 700px; /* Increase the height */
+  background-image: url(Love1.jpg); /* Update with valid image URL */
+  background-size: cover;
+  background-position: center;
+  background-size: 97%;
+  box-shadow: 1px 1px 12px black;
+  transform: preserve-3d;
+  perspective: 2000px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  background-color: lightgray;
+  background-image: linear-gradient(40deg, rgb(251, 27, 91), #fff);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform-origin: 0;
+  box-shadow: 1px 1px 12px lightgray;
+}
+
+.book:hover .cover {
+  transform: rotateY(-85deg);
+}
+
+.heart {
+  position: absolute;
+  background-color: #d80086;
+  height: 200px;
+  width: 200px; /* Increase the size */
+  top: 270px; /* Adjusted top position */
+  left: 100px; /* Adjusted left position */
+  transform: rotate(-45deg);
+  animation: .8s beat infinite;
+}
+
+@keyframes beat {
+  0%, 40%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  25%, 60% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+}
+
+.smile {
+  position: absolute;
+  width: 100px; /* Increase the size */
+  height: 70px; /* Increase the size */
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 0 0 150px 150px; /* Adjusted border radius */
+  top: 350px; /* Adjusted top position */
+  left: 145px; /* Adjusted left position */
+  overflow: hidden;
+}
+
+.eyes {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #333;
+  width: 50px; /* Increase the size */
+  height: 70px; /* Increase the size */
+  z-index: 1;
+  top: 255px; /* Adjusted top position */
+  left: 201px; /* Adjusted left position */
+  box-shadow: -60px 0 #333; /* Adjusted box-shadow */
+  transform-origin: 50%;
+  animation: close 2s infinite;
+}
+
+@keyframes close {
+  0%, 100% {
+    transform: scale(1, 0.05);
+  }
+  5%, 95% {
+    transform: scale(1, 1);
+  }
+}
+
+.notes {
+  position: absolute;
+  color: #20cf0c;
+  left: 80px;
+  font-size: 50px; /* Increase the font size */
+  top: 30px; /* Adjusted top position */
+  width: 250px; /* Adjusted width */
+  text-align: center;
+  font-family: 'Protest Revolution', sans-serif;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Existing CSS */
+
+/* Add this CSS for responsiveness */
+@media only screen and (max-width: 600px) {
+  .book {
+    width: 300px; /* Adjusted width for smaller screens */
+    height: 500px; /* Adjusted height for smaller screens */
+  }
+
+  .heart {
+    height: 150px; /* Adjusted heart size for smaller screens */
+    width: 150px; /* Adjusted heart size for smaller screens */
+    top: 200px; /* Adjusted top position for smaller screens */
+    left: 75px; /* Adjusted left position for smaller screens */
+  }
+
+  .smile {
+    width: 70px; /* Adjusted smile size for smaller screens */
+    height: 50px; /* Adjusted smile size for smaller screens */
+    top: 250px; /* Adjusted top position for smaller screens */
+    left: 115px; /* Adjusted left position for smaller screens */
+  }
+
+  .eyes {
+    width: 35px; /* Adjusted eyes size for smaller screens */
+    height: 50px; /* Adjusted eyes size for smaller screens */
+    top: 175px; /* Adjusted top position for smaller screens */
+    left: 151px; /* Adjusted left position for smaller screens */
+    box-shadow: -30px 0 #333; /* Adjusted box-shadow for smaller screens */
+  }
+
+  .notes {
+    font-size: 30px; /* Adjusted font size for smaller screens */
+    left: 40px; /* Adjusted left position for smaller screens */
+    top: 15px; /* Adjusted top position for smaller screens */
+    width: 200px; /* Adjusted width for smaller screens */
+  }
+}
+
+
